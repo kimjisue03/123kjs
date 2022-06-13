@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "confirmed.h"                           //[Æò°¡Ç×¸ñ8]:´ÙÁß¼Ò½ºÆÄÀÏ »ç¿ë
+#include "confirmed.h"                           //[í‰ê°€í•­ëª©8]:ë‹¤ì¤‘ì†ŒìŠ¤íŒŒì¼ ì‚¬ìš©
 
 
 char output_1() {
-	struct covid list[5] ;                    //[Æò°¡Ç×¸ñ5]:±¸Á¶Ã¼ »ç¿ë
-	FILE* fp;                                 //[Æò°¡Ç×¸ñ7]:ÆÄÀÏ ÀÔÃâ·Â
+	struct covid list[5] ;                    //[í‰ê°€í•­ëª©5]:êµ¬ì¡°ì²´ ì‚¬ìš©
+	FILE* fp;                                 //[í‰ê°€í•­ëª©7]:íŒŒì¼ ì…ì¶œë ¥
 	fopen_s(&fp, "qab.txt","r");
 	for (int i = 0; i <5; i++) {
-		fscanf_s(fp, "%s %d %d",list[i].information , & list[i].con, & list[i].dead);
+		fscanf_s(fp, "%d %d %d",&list[i].information , & list[i].con, & list[i].dead);
 	}
 	fclose(fp);
 	for (int i = 0; i < 5; i++)
-		printf("2022³â %s ÄÚ·Î³ª È®ÁøÀÚ¼ö:%8d¸í   »ç¸ÁÀÚ¼ö:%6d¸í\n", list[i].information, list[i].con, list[i].dead);
+		printf("2022ë…„ %dì›” ì½”ë¡œë‚˜ í™•ì§„ììˆ˜:%8dëª…   ì‚¬ë§ììˆ˜:%6dëª…\n", list[i].information, list[i].con, list[i].dead);
 	return 0;
 }
