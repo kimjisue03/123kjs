@@ -1,7 +1,7 @@
 char output_1();
 struct covid
 {
-	char information[5];
+	int information;
 	int con;
 	int dead;
 
